@@ -40,17 +40,11 @@ class Producto extends CI_Controller {
 	public function index()
 	{
 		//$this->load->view('welcome_message');
-        $data = $this->MY_Producto->fetch_all();
+        $data = $this->MY_Producto->get_all();
         echo json_encode($data->result_array());
 	}
 
-	public function get_all()
-	{
-		$this -> db -> select('*');
-		$this -> db ->from('producto');
-		$query = $this -> db -> get() ->result();
-		return $query;
-	}
+	
 }
 
 

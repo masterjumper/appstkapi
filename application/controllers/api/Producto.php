@@ -24,8 +24,8 @@ class Producto extends REST_Controller {
     public function index_get()
 	{
 		//$this->load->view('welcome_message');
-        $data = $this->MY_Producto->fetch_all();
-        echo json_encode($data->result_array());
+        $data = $this->MY_Producto->get_all();
+        echo json_encode($data);
         $this->response($data, REST_Controller::HTTP_OK);
 	}
 

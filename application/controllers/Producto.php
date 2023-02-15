@@ -8,6 +8,7 @@ class Producto extends CI_Controller {
     {
         // Construct the parent class
         parent::__construct();
+		$this->load->database();
         $this -> load ->model('MY_Producto');
         
 //        $this -> load ->libreries('uri');
@@ -42,6 +43,15 @@ class Producto extends CI_Controller {
         $data = $this->MY_Producto->fetch_all();
         echo json_encode($data->result_array());
 	}
+
+	public function get_all()
+	{
+		$this -> db -> select('*');
+		$this -> db ->from('producto');
+		$query = $this -> db -> get() ->result();
+		return $query;
+	}
 }
+
 
 ?>

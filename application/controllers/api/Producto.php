@@ -2,7 +2,7 @@
    
 require APPPATH . 'libraries/REST_Controller.php';
      
-class Item extends REST_Controller {
+class Producto extends REST_Controller {
     
 	  /**
      * Get All Data from this method.

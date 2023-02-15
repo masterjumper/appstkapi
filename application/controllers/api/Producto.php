@@ -11,7 +11,7 @@ class Producto extends REST_Controller {
     */
     public function __construct() {
        parent::__construct();
-       //$this->load->database();
+       $this->load->database();
        $this -> load ->model('MY_Producto');
     }
        
@@ -21,7 +21,7 @@ class Producto extends REST_Controller {
      * @return Response
     */
     
-    public function index()
+    public function index_get()
 	{
 		//$this->load->view('welcome_message');
         $data = $this->MY_Producto->fetch_all();

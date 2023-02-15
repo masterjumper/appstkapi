@@ -11,6 +11,7 @@ class MY_Producto extends CI_Model
 	{
 		$this -> db -> select('*');
 		$this -> db ->from('producto');
+        $this->db->order_by('prodsc', 'ASC');
 		$query = $this -> db -> get() ->result();
 		return $query;
 	}

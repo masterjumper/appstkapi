@@ -26,7 +26,7 @@ class Producto extends REST_Controller {
 		//$this->load->view('welcome_message');
         $data = $this->MY_Producto->get_all();
         echo json_encode($data);
-        $this->response($data, REST_Controller::HTTP_OK);
+        //$this->response($data, REST_Controller::HTTP_OK);
 	}
 
 	/* public function index_get($id = 0)
@@ -58,13 +58,14 @@ class Producto extends REST_Controller {
      *
      * @return Response
     */
-    /* public function index_put($id)
-    {
-        $input = $this->put();
-        $this->db->update('items', $input, array('id'=>$id));
+    public function index_put($proid, $proimp)
+    {        
+        $this->MY_Producto->set_proimp($proid, $proimp)
+        //$input = $this->put();
+        //$this->db->update('items', $input, array('id'=>$id));
      
         $this->response(['Item updated successfully.'], REST_Controller::HTTP_OK);
-    } */
+    } 
      
     /**
      * Get All Data from this method.
